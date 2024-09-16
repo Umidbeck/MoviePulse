@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Kirish{% endblock title %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h2 style="text-align: center;">Sayitga kirish</h2>
+<form method="post" style="max-width: 400px; margin: auto; padding: 20px;">
+    {% csrf_token %}
+
+    <div style="margin-bottom: 15px;">
+        <label>{{ form.username.label }}</label>
+        {{ form.username }}  <!-- Username input -->
+    </div>
+
+    <div style="margin-bottom: 15px;">
+        <label>{{ form.password.label }}</label>
+        {{ form.password }}  <!-- Password input -->
+    </div>
+
+    <button type="submit" style="width: 100%; padding: 10px;">Kirish</button>
+    <a href="{% url 'password_reset' %}" style="display: block; text-align: center; margin-top: 10px;">Parolni tiklash</a>
+</form>
+{% endblock content %}
+
+

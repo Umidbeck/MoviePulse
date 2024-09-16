@@ -39,13 +39,13 @@
                 <a href="{% url 'index' %}"><img src="/media/assets/img/logo.png" alt="logo"/></a>
             </div>
             <div class="header-right">
-                <form action="#">
-                    <select>
-                        <option value="Movies">Movies</option>
-                        <option value="Movies">Movies</option>
-                        <option value="Movies">Movies</option>
-                    </select>
-                    <input type="text" placeholder="Search"/>
+                <form action="{% url 'search' %}">
+<!--                    <select>-->
+<!--                        <option value="Movies">Movies</option>-->
+<!--                        <option value="Movies">Movies</option>-->
+<!--                        <option value="Movies">Movies</option>-->
+<!--                    </select>-->
+                    <input type="text" name="q" placeholder="Search..." value="{{ request.GET.q }}">
 <!--                    <button><i class="icofont icofont-search"></i></button>-->
                 </form>
                 <ul>
