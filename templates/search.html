@@ -25,8 +25,8 @@
         <ul class="list-group">
             {% for post in posts %}
                 <li class="list-group-item">
-                    <a href="{% url 'post_detail' post.id %}" class="font-weight-bold">{{ post.title }}</a>
-                    <p class="mt-2 text-muted">{{ post.content|truncatewords:20 }}</p>
+                    <a href="{% url 'movies-detail' post.pk %}" class="font-weight-bold">{{ post.title }}</a>
+                    <p class="mt-2 text-muted">{{ post.body|truncatewords:20 }}</p>
                 </li>
             {% empty %}
                 <li class="list-group-item text-center text-muted">No posts found for '{{ request.GET.q }}'.</li>
