@@ -129,33 +129,10 @@
                     </div>
                     <div class="details-reply">
                         <h2>Leave a Reply</h2>
-                        <form action="#">
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <div class="select-container">
-                                        <input type="text" placeholder="Name"/>
-                                        <i class="icofont icofont-ui-user"></i>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="select-container">
-                                        <input type="text" placeholder="Email"/>
-                                        <i class="icofont icofont-envelope"></i>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="select-container">
-                                        <input type="text" placeholder="Phone"/>
-                                        <i class="icofont icofont-phone"></i>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="textarea-container">
-                                        <textarea placeholder="Type Here Message"></textarea>
-                                        <button><i class="icofont icofont-send-mail"></i></button>
-                                    </div>
-                                </div>
-                            </div>
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit" class="main-button">Jo'natish</button>
                         </form>
                     </div>
                     <div class="details-comment">

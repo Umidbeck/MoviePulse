@@ -21,29 +21,29 @@
 					<div class="row flexbox-center">
 						<div class="col-lg-5 text-lg-left text-center">
 							<div class="transformers-content">
-								<img src="/media/assets/img/slide4.jpg" alt="about" />
+								<img src="{{ post.photo.url }}" alt="about" />
 							</div>
 						</div>
 						<div class="col-lg-7">
 							<div class="transformers-content mtr-30">
-								<h2>Alex Px.</h2>
+								<h2>{{ post.name }}</h2>
 								<a href="#" class="theme-btn">Biography</a>
-								<a href="#">Filmography</a>
+<!--								<a href="#">Filmography</a>-->
 								<ul>
 									<li>
 										<div class="transformers-left">
-											Height:
+											Birthday:
 										</div>
 										<div class="transformers-right">
-											5.7”
+											{{ post.birth_date }}
 										</div>
 									</li>
 									<li>
 										<div class="transformers-left">
-											Weight:
+											Movies Name:
 										</div>
 										<div class="transformers-right">
-											1136LB
+											{{ post.mov_name }}:
 										</div>
 									</li>
 									<li>
@@ -51,7 +51,7 @@
 											Eye Color:
 										</div>
 										<div class="transformers-right">
-											Black
+											--
 										</div>
 									</li>
 									<li>
@@ -59,7 +59,7 @@
 											Hair Color: 
 										</div>
 										<div class="transformers-right">
-											Black
+											--
 										</div>
 									</li>
 									<li>
@@ -67,7 +67,7 @@
 											Birthday:
 										</div>
 										<div class="transformers-right">
-											1985.Jun.20
+											--
 										</div>
 									</li>
 									<li>
@@ -75,7 +75,7 @@
 											Language:
 										</div>
 										<div class="transformers-right">
-											English, Russian
+											--
 										</div>
 									</li>
 									<li>
@@ -83,7 +83,7 @@
 											Hobby:
 										</div>
 										<div class="transformers-right">
-											Base Ball, Gaming, Exploring, Baook Reading
+											--
 										</div>
 									</li>
 									<li>
@@ -112,7 +112,7 @@
 						<div class="details-content">
 							<div class="details-overview">
 								<h2>Overview</h2>
-								<p>Humans are at war with the Transformers, and Optimus Prime is gone. The key to saving the future lies buried in the secrets of the past and the hidden history of Transformers on Earth. Now it's up to the unlikely alliance of inventor Cade Yeager, Bumblebee, a n English lord and an Oxford professor to save the world. Transformers: The Last Knight has a deeper mythos and bigger spectacle than its predecessors, yet still ends up being mostly hollow and cacophonous. The first "Transformers" movie that could actually be characterized as badass. Which isn't a bad thing. It may, in fact, be better.</p>
+								<p>{{ post.body }}</p>
 							</div>
 							<div class="details-reply">
 								<h2>Leave a Reply</h2>

@@ -48,10 +48,17 @@
                     <input type="text" name="q" placeholder="Search..." value="{{ request.GET.q }}">
 <!--                    <button><i class="icofont icofont-search"></i></button>-->
                 </form>
+                {% if user.is_authenticated %}
                 <ul>
-                    <li><a href="#">Welcome Guest!</a></li>
-                    <li><a class="login-popup" href="#">Login</a></li>
+                    <li><a href="#">{{ user.username | title }}</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
                 </ul>
+                {% else %}
+                <ul>
+                    <li><a href="{% url 'login' %}">Login |</a></li>
+                    <li><a href="{% url 'signup' %}">Sign |</a></li>
+                </ul>
+                {% endif %}
             </div>
             <div class="menu-area">
                 <div class="responsive-menu"></div>
@@ -59,14 +66,9 @@
                     <ul id="primary-menu">
                         <li><a class="active" href="{% url 'index' %}">Home</a></li>
                         <li><a href="{% url 'movies' %}">Movies</a></li>
-                        <li><a href="{% url 'celebrities' %}">CelebritiesList</a></li>
                         <li><a href="{% url 'top-movies' %}">Top Movies</a></li>
                         <li><a href="{% url 'blog' %}">News</a></li>
-                        <li><a class="active" href="#">Pages <i class="icofont icofont-simple-down"></i></a>
-                            <ul>
-                                <li><a href="{% url 'blog-details' %}">Blog Details</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="{% url 'actors' %}">Actors</a></li>
                         <li><a class="theme-btn" href="#"><i class="icofont icofont-ticket"></i> Tickets</a></li>
                     </ul>
                 </div>
