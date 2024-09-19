@@ -59,7 +59,7 @@ class Actor(models.Model):
 
 class Like(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    post = models.ForeignKey(MovPost, on_delete=models.CASCADE)
+    post = models.ForeignKey(MovPost, related_name='likes', on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

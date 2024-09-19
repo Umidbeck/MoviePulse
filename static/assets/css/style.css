@@ -1292,6 +1292,63 @@ hr {
   height: 100%;
   background: #fff url("../img/loader.gif") no-repeat center center;
 }
+.like-button-container {
+    text-align: center; /* Tugmani markazda joylashtirish */
+    margin: 20px 0; /* Tugma atrofida bo'sh joy */
+}
+
+.like-button {
+    background-color: #f0f0f0; /* Tugma fon rangi */
+    border: none; /* Chekkalar yo'q */
+    border-radius: 5px; /* Burchaklarni yumshatish */
+    padding: 10px 20px; /* Tugma ichidagi bo'sh joy */
+    font-size: 16px; /* Matn o'lchami */
+    cursor: pointer; /* Ko'rsatgichni o'zgartirish */
+    transition: background-color 0.3s, transform 0.2s; /* Animatsiya */
+}
+
+.like-button:hover {
+    background-color: #e0e0e0; /* Hover effekti */
+    transform: scale(1.05); /* Tugmani kattalashtirish */
+}
+
+.liked {
+    color: red; /* Like qilinganida rang o'zgaradi */
+}
+
+.not-liked {
+    color: gray; /* Like qilinmaganida rang */
+}
+.post {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.comments-section {
+    margin-top: 20px;
+}
+
+.comment {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 15px 0;  /* Commentlar orasida bo'sh joy */
+    border-radius: 5px;
+    background-color: #f9f9f9;  /* Commentlar uchun fon rangi */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Yumshoq soyalar */
+}
+
+.comment p {
+    margin: 5px 0;
+}
+
+.comment-date {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 5px;  /* Sana ustiga bo'sh joy */
+}
 /*--------------------------------------
 --------- Pre Loader Style END ---------
 ---------------------------------------*/

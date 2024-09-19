@@ -109,6 +109,27 @@
                                 </div>
                                     {% endfor %}
                             </li>
+                            {% if user.is_authenticated %}
+                            <li>
+                                <div class="transformers-left">
+                                    Like
+                                </div>
+                                <div class="transformers-right">
+                                    <div class="like-button-container">
+                                            <form action="{% url 'like_post' post.id %}" method="post">
+                                                {% csrf_token %}
+                                                <button type="submit" class="like-button">
+                                                    {% if user_liked %}
+                                                    <span class="liked">❤️</span> Unlike
+                                                    {% else %}
+                                                        <span class="not-liked">🤍</span> Like
+                                                    {% endif %}
+                                                </button>
+                                            </form>
+                                    </div>
+                                </div>
+                            </li>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>
@@ -129,16 +150,29 @@
                     </div>
                     <div class="details-reply">
                         <h2>Leave a Reply</h2>
-                        <form method="post">
-                            {% csrf_token %}
-                            {{ form.as_p }}
-                            <button type="submit" class="main-button">Jo'natish</button>
-                        </form>
+                        <div class="post">
+                            <form method="post">
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                                <button type="submit">Submit Comment</button>
+
+                            </form>
+                        </div>
+
                     </div>
                     <div class="details-comment">
-                        <a class="theme-btn theme-btn2" href="#">Post Comment</a>
-                        <p>You may use these HTML tags and attributes: You may use these HTML tags and attributes: You
-                            may use these HTML tags and attributes: </p>
+<!--                        <a class="theme-btn theme-btn2" href="#">Comment</a>-->
+                        <div class="comments-section">
+                                <h3>Comments</h3>
+                                {% for comment in post.comment_set.all %}
+                                    <div class="comment">
+                                        <p><strong>{{ comment.user.username }}</strong>:</p>
+                                        <p>{{ comment.text }}</p><br>
+                                    </div>
+                                {% empty %}
+                                    <p>No comments yet.</p>
+                                {% endfor %}
+                        </div>
                     </div>
                     <div class="details-thumb">
                         <div class="details-thumb-prev">
