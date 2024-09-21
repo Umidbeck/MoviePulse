@@ -1349,6 +1349,13 @@ hr {
     color: #777;
     margin-top: 5px;  /* Sana ustiga bo'sh joy */
 }
+post-image {
+        width: 100%; /* Rasm kengligini konteynerga moslashtirish */
+        height: 20px; /* Balandlik berish */
+        object-fit: cover; /* Rasmni kesish va to'ldirish */
+        border-radius: 5px; /* Burchaklarni yumshatish */
+    }
+
 /*--------------------------------------
 --------- Pre Loader Style END ---------
 ---------------------------------------*/
