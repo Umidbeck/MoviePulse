@@ -23,9 +23,9 @@ class HomeView(ListView):
         user = self.request.user  # Foydalanuvchi obyektini olish
         for post in context['posts']:
             post.likes_count = post.likes.count()  # Har bir post uchun like sonini olish
-            post.user_liked = user.is_authenticated and post.likes.filter(user=user).exists()  # Foydalanuvchi like qo'shgani
+            post.user_liked = user.is_authenticated and post.likes.filter(
+                user=user).exists()  # Foydalanuvchi like qo'shgani
         return context
-
 
 
 class BlogView(ListView):
@@ -104,6 +104,7 @@ class LikePostView(View):
             return redirect('movies-detail', pk=post.id)
         else:
             return redirect('login')  # Tizimga kirishni talab qilish
+
 
 class MoviesView(ListView):
     model = MovPost
